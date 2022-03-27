@@ -35,13 +35,13 @@
     const  Circulo2 = document.querySelector('#Circulo2')
     const radio1 = 200
     let radian1 = 0 //angulo del origen
-    const velocity = 0.03// velocidad angular=> angulo cambia respecto al tiempo
+    const velocity = 0.08// velocidad angular=> angulo cambia respecto al tiempo
 
     setInterval(function(){
         Circulo2.style.left = `${250 + (Math.cos(radian1) * radio1)}px`// h + (coseno del angulo * radio)
         Circulo2.style.top = `${250 + (Math.sin(radian1) * radio1)}px`// k + (seno del angulo *radio)
         radian1 += velocity // radian + velocidad angular
-        },1000/60)//radianes por segundo
+        },100)//radianes por segundo
 
     
 </script>

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+    <div id="circulo_rojo" style="z-index:5;
+    position:absolute;
+    left:100px;
+    top:100px;
+    width:50px;
+    height:50px;
+    border-radius:50%;
+    background:red;
+    transform-origin: 100px 100px;"></div>
+    <div id="circulo_rosa" style="z-index:5;
+    position:absolute;
+    left:175px;
+    top:175px;
+    width:50px;
+    height:50px;
+    border-radius:50%;
+    background:pink"></div>
+    <!-- en JavaScript -->
+    <script>
+        // guardar una variable con todas las propiedades del mundo
+        var mundo_imagen = document.getElementById('circulo_rojo');
+        // unidad de tiempo en millisegundos
+        var unidad_tiempo_1 = 100;
+        // con cada unidad de tiempo, ¿cuantos grados rotamos?
+        var angulo = 5; // pixeles
+        // variable para guardar los grados con que rotamos
+        var angulo_guardado = 0;
+        setInterval(function(){
+            // actualizamos el ángulo con que rotamos
+            angulo_guardado = angulo_guardado + angulo;
+            // actualizamos la propiedad transform
+            mundo_imagen.style.transform = 'rotate('.concat(angulo_guardado).concat('deg)');
+        },unidad_tiempo_1)
+    </script>
+    
+    
+</html>
