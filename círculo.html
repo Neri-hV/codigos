@@ -1,0 +1,48 @@
+<html>
+<style>#Circulo1 {
+  position: absolute;
+  top: 400vmin;
+  left: 500vmin;
+  height: 200vmin;
+  width: 200vmin;
+  margin-top: -100vmin;
+  margin-left: -100vmin;
+  background-color: #FD131F;
+  border-radius:50%;
+} 
+#Circulo2{
+  position: absolute;
+  top: 50vmin;
+  left: 50vmin;
+  height:100vmin;
+  width:100vmin;
+  background-color:#f5acff;
+  border-radius:50%;
+}
+#OrbitaCirculo2{
+  position: absolute;
+  top: 400vmin;
+  left: 500vmin;
+  width: 500vmin;
+  height: 500vmin;
+  margin-top: -250vmin;
+  margin-left: -250vmin;
+  animation: spin-right 2s linear infinite;
+}
+@keyframes spin-right {
+100% {
+  transform: rotate(360deg);
+}
+}
+</style>
+    <head>
+        <title>Document</title>
+        <link rel="stylesheet" href="style.css">
+    </head>
+    <body>
+        <div id="Circulo1"></div>
+        <div id='OrbitaCirculo2'>
+            <div id="Circulo2"></div>
+         </div>
+    </body>
+</html>

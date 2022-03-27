@@ -1,0 +1,48 @@
+<!--version basada en https://www.youtube.com/watch?v=ZmIHQBMhDiQ&t=1s 
+  codigo corregido autor https://github.com/M-AdilAhmad/2d-solar-system-->
+<!DOCTYPE html>
+<html>
+<style>
+
+#Circulo1 {
+  position: absolute;
+  top: 200px;/*posicion en la pantalla*/
+  left: 200px;
+  height: 200px;/*radio del circulo  1*/
+  width: 200px;
+  background-color: greenyellow;
+  border-radius:50%;
+} 
+#Circulo2 {
+  position: absolute;
+  top: 100px;/*posicion en la pantalla*/
+  left: 100px;
+  height:100px;/*radio del circulo2 */
+  width:100px;
+  background-color:blue;
+  border-radius:50%;
+}
+
+
+</style>    
+<body>
+  
+    <div id="Circulo1"></div>
+    <div id="Circulo2"></div>
+</body>
+<script>
+    //una circunferencia 360 grados o 2pi radianes // 1 radian => arco de la circunferencia= al radio del circulo
+    const  Circulo2 = document.querySelector('#Circulo2')
+    const radio1 = 200
+    let radian1 = 0 //angulo del origen
+    const velocity = 0.03// velocidad angular=> angulo cambia respecto al tiempo
+
+    setInterval(function(){
+        Circulo2.style.left = `${250 + (Math.cos(radian1) * radio1)}px`// h + (coseno del angulo * radio)
+        Circulo2.style.top = `${250 + (Math.sin(radian1) * radio1)}px`// k + (seno del angulo *radio)
+        radian1 += velocity // radian + velocidad angular
+        },1000/60)//radianes por segundo
+
+    
+</script>
+</html>
