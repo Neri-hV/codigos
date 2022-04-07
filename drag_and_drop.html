@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<!--Codigo base de W3Schools https://www.w3schools.com/html/html5_draganddrop.asp -->
+<html>
+<style>
+  #div1 {
+    width: 150px;
+    height: 70px;
+    padding: 10px;
+    border: 1px solid black;
+  }
+  #bola {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background-color: blue;
+    padding: 10px;
+  }
+</style>
+        
+<body>
+<!--atributo ondrop llama al evento soltar drop(event)-->
+<!--ondragover especifica donde sera arrastrado el elemento-->
+<div id="div1" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+<br>
+<!--hacer que un objeto se arrastrable draggable=true-->
+<!--ondragstart llama al evento arrastrar drag(event)-->
+<div id="bola" draggable="true" ondragstart="drag(event)"></div>
+
+<!-- el ejemplo original es con una imagen-->
+<!--
+<div id="div1" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+<img id="drag1" src="img_logo.gif" draggable="true" ondragstart="drag(event)" width="336px" height="69px">
+-->
+
+</body>
+    <script>
+
+        function allowDrop(ev) {
+          ev.preventDefault();//evita que el navegador use el permitir soltar de manera predeterminada
+        }
+        
+        function drag(ev) { //funcion que fue llamada con ondragstart en el div o img
+        //establece el tipo de datos "text" y el id de los datos ej: bola o drag1       
+          ev.dataTransfer.setData("text", ev.target.id); //"text" da igual si se pone lo que sea entre las comillas
+        }
+        
+        function drop(ev) {//funcion que fue llamada con ondrop en el div
+          ev.preventDefault();//evita que el navegador suelte el "objeto" de manera predeterminada
+          var data = ev.dataTransfer.getData("text");//obtiene los datos arrastrados establecidos en setData()
+          ev.target.appendChild(document.getElementById(data));//agrega el elemento a su deposito
+        }
+    </script>
+</html>
