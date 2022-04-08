@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+  <style>
+/*pantalla completa basado en https://www.w3schools.com/howto/howto_css_full_page.asp */
+body, html {
+    height: 100%;
+    margin: 0;
+}
+        
+/*ID del objeto div bola*/
+#bola {
+    width: 250px;
+    height: 250px;
+    border-radius: 50%;
+    background-color: blue;                
+}
+/*clase center para el objeto bola*/  
+.center {
+    position: absolute;
+    left: calc(50% - 156px);
+    top: calc(50% - 158px);
+}
+/*caracteristicas del background*/  
+.bg {
+    /* The image used or the background color in this case*/
+    background-color:antiquewhite;
+    /* Full height and width */
+    height: 100%;
+    width: 100%;
+    /* Center, cover and not repeat the image nicely */
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+  </style>
+  </head>
+  <!-- funcion calc https://www.w3schools.com/cssref/tryit.asp?filename=trycss_func_calc -->
+  <body>
+    <div class ="bg"> <!--contenedor padre background o fondo-->
+    <div id="bola" class="center"></div>
+         
+    <div style="
+    z-index:5;
+    position:absolute;
+    /*AHIRAM función calc() posiciona el círculo al 50% de la pantalla (la mitad) y restale 175px (esto lo fuí calculando para que se viera centrado, ustedes podrían cambiar los pixeles)*/
+    left: calc(50% - 175px);
+    top: calc(50% - 175px);
+    width: 250px;
+    height: 250px;
+    border-radius:50%;
+    border: 20px solid;
+    border-color: blueviolet;"></div>
+
+    <div style="
+    position: absolute;
+    width: 20px;
+    height:100px;
+    /*funcion calc posiciona al 50% de la pantalla y le resta 40px a la izq y le suma 115px al top*/
+    left:calc(50% - 40px);
+    top: calc(50% + 115px);
+    background: yellow;"></div>
+
+    <div style="
+    position: absolute;
+    width: 60px;
+    height: 20px;
+    /*funcion calc posiciona al 50% de la pantalla y le resta 60px a la izq y le suma 163px al top*/
+    left: calc(50% - 60px);
+    top: calc(50% + 163px);
+    background: blueviolet;"></div>
+
+  </div>
+</div><!--fin del contenedor padre-->
+</body>
+
+</html>
