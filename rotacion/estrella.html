@@ -1,0 +1,61 @@
+<html>
+<style>
+    #estrella {
+      width: 0;
+      height: 0;
+      border-left: 50px solid transparent;
+      border-right: 50px solid transparent;
+      border-bottom: 50px solid rgb(229, 255, 0);
+      position: relative;
+    }
+
+    #estrella:after {
+      width: 0;
+      height: 0;
+      border-left: 50px solid transparent;
+      border-right: 50px solid transparent;
+      border-top: 50px solid rgb(229, 255, 0);
+      position: absolute;
+      content: "";
+      top: 15px;
+      left: -50px;
+    }
+</style>
+
+<!-- crear las formas -->
+<div id = "estrella" style="
+position:absolute;
+left:175px;
+top:175px;
+z-index: 3;"></div>
+<div id="circulo" style="
+    z-index:5;
+    position:absolute;
+    left:100px;
+    top:100px;
+    width:50px;
+    height:50px;
+    border-radius:50%;
+    background:rgb(62, 70, 62);
+    transform-origin: 125px 108px;"><!--he tenido que usar el live server para definir esto left 225 y top 208-->
+    </div>
+    <!-- en JavaScript -->
+<script>
+    // guardar una variable con todas las propiedades del circulo
+    var satelite = document.getElementById('circulo');  
+    // unidad de tiempo en millisegundos
+    var unidad_tiempo = 500;
+    //variables para definir el ángulo y los grados para que roten.
+    var angulo1 = 0; // ROTACION creamos las variables angulos y grados
+    var grados = 20;
+
+    // llamando setInterval para repetir una funcion
+    setInterval(function(){
+        angulo1 = angulo1 + grados; //ROTACIÓN Actualizar la variable angulo
+    
+        satelite.style.transform=`rotate(${angulo1}deg)`; //intentamos esta sintaxis en la asesoría
+     //rotate(angulo1 + 'deg'; //ROTACIÓN Actualizar propiedad transform
+    },unidad_tiempo);
+
+</script>
+</html>
