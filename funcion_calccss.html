@@ -38,7 +38,14 @@ body, html {
   <body>
     <div class ="bg"> <!--contenedor padre background o fondo-->
     <div id="bola" class="center"></div>
-         
+    
+    <div><!--NERI:el ID Debe estar en la tag <img> para que la funcion reconozca bien sus propiedades -->
+      <!-- NERI use position absolute en vez de relative para mejorar el encuadre y el calc en top y left para que no se te descentre-->
+      <img id="sat_1" src="satellite.png" 
+      style="width: 100px; height: 100px; position: absolute; top:calc(50% - 130px); left:calc(50% - 350px); z-index: 1; transform-origin:290px 175px;"> 
+      <!-- NERI: solo debes usar la propiedad transform origin que es el centro de la rotacion sus valores left y top los calcule al tanteo-->  
+    </div>
+
     <div style="
     z-index:5;
     position:absolute;
@@ -72,5 +79,21 @@ body, html {
   </div>
 </div><!--fin del contenedor padre-->
 </body>
+<script>
+  //guardar variable con propiedades de un id recuerda debe estar en la etiqueta img
+  var s1 = document.getElementById("sat_1");
+  // unidad de tiempo en millisegundos
+  var unidad_tiempo = 200;
+  // con cada unidad de tiempo, ¿cuanta distancia voy a cubrir?
+  //variables para definir el ángulo y los grados para que roten.
+  var angulo1 = 0; // angulo inicial
+  var grados = 20; // grados que aumenta conforme rota
 
+  // llamando setInterval para repetir una funcion
+  setInterval(function(){
+      angulo1 = angulo1 + grados; //ROTACIÓN actualizar la variable angulo  
+      s1.style.transform="rotate(".concat(angulo1).concat("deg)");
+     },unidad_tiempo);
+</script>
 </html>
+<!-- satellite.png image fue obtenida de el grupo 7 4ta generacio-->
